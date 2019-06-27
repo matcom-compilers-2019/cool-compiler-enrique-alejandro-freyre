@@ -1,8 +1,11 @@
 #Reporte
 
 ##Integrantes
+
 Enrique Cobreiro Suarez       C-411
+
 Alejandro Dominguez Rivero    C-411
+
 Alejandro Freyre Echevarria   C-412
 
 ##Arquitectura
@@ -36,6 +39,7 @@ atribuyo este comportamiento(Scope, TypeInfo). Estas a partir de diccionarios y 
 logran satisfactoriamente su objetivo.
 
 ###Generación de Código Intermedio
+
 Para evitar directamente el trabajo de generar código MIPS se diseñó una estructura de codigo intermedio que 
 permitiese representar operaciones como el paso de parámetros y el trabajo con la memoria.
 Dentro de la estructura del código intermedio se definen clases para la asignación de variables, memoria,
@@ -46,6 +50,7 @@ generen el código intermedio correspondente. La generación de código intermed
 por cada rama del ProgramNode del AST.
 
 ###Generación de Código MIPS
+
 Siguiendo la idea de que cada nodo sepa chequearse y generar su código intermedio, añadimos a cada nodo de la estructura
 de código intermedio un metod que retornase todas las lineas de código MIPS correspondientes a la instrucción que se
 intenta representar con dicho nodo. Para ello se llama a la clase WMIPS que tiene un conjunto de funciones que generan
