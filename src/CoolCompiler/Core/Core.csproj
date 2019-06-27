@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A931537-78AD-4DD0-970A-8DCFAAF418F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>..\packages\Antlr4.Runtime.Standard.4.7.2\lib\net35\Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\Assigment\AssigmentNode.cs" />
+    <Compile Include="AST\ASTNode.cs" />
+    <Compile Include="AST\Class\ClassNode.cs" />
+    <Compile Include="AST\Dispatch\BaseDispatch.cs" />
+    <Compile Include="AST\Dispatch\DispatchNode.cs" />
+    <Compile Include="AST\Dispatch\ExplicitDispatch.cs" />
+    <Compile Include="AST\Dispatch\ImplicitDispatch.cs" />
+    <Compile Include="AST\Expressions\Atomics\AtomNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\BoolNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\IdNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\IntegerNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\SelfNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\StringNode.cs" />
+    <Compile Include="AST\Expressions\Atomics\VoidNode.cs" />
+    <Compile Include="AST\Expressions\ExpressionNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Arithmetic\ArithmeticOperatorNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Arithmetic\DivNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Arithmetic\MulNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Arithmetic\SubNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Arithmetic\SumNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\BinaryOperatorNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Comparison\ComparisonOperatorNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Comparison\EqualNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Comparison\LessEqualNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Binarys\Comparison\LessNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Unarys\IsVoidNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Unarys\NegationNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Unarys\NotNode.cs" />
+    <Compile Include="AST\Expressions\Operators\Unarys\UnaryOperatorNode.cs" />
+    <Compile Include="AST\Expressions\Secuence\SecuenceNode.cs" />
+    <Compile Include="AST\Feature\AttributeNode.cs" />
+    <Compile Include="AST\Feature\FeatureNode.cs" />
+    <Compile Include="AST\Feature\MethodNode.cs" />
+    <Compile Include="AST\Formal\FormalNode.cs" />
+    <Compile Include="AST\Keyword\CaseNode.cs" />
+    <Compile Include="AST\Keyword\ConditionalNode.cs" />
+    <Compile Include="AST\Keyword\KeywordNode.cs" />
+    <Compile Include="AST\Keyword\LetNode.cs" />
+    <Compile Include="AST\Keyword\LoopNode.cs" />
+    <Compile Include="AST\Keyword\NewNode.cs" />
+    <Compile Include="AST\Program\ProgramNode.cs" />
+    <Compile Include="AST\Type\TypeNode.cs" />
+    <Compile Include="CodeGen\BuildICCode.cs" />
+    <Compile Include="CodeGen\Generals.cs" />
+    <Compile Include="CodeGen\Generator.cs" />
+    <Compile Include="CodeGen\IC\ICAllocation.cs" />
+    <Compile Include="CodeGen\IC\ICAssign.cs" />
+    <Compile Include="CodeGen\IC\ICCalls.cs" />
+    <Compile Include="CodeGen\IC\ICCode.cs" />
+    <Compile Include="CodeGen\IC\ICComent.cs" />
+    <Compile Include="CodeGen\IC\ICInheritance.cs" />
+    <Compile Include="CodeGen\IC\ICJumps.cs" />
+    <Compile Include="CodeGen\IC\ICLabel.cs" />
+    <Compile Include="CodeGen\IC\ICMethodLine.cs" />
+    <Compile Include="CodeGen\IC\ICOperations.cs" />
+    <Compile Include="CodeGen\IC\IGenIntCode.cs" />
+    <Compile Include="Parser\ASTGenerator.cs" />
+    <Compile Include="Parser\CoolBaseVisitor.cs" />
+    <Compile Include="Parser\CoolLexer.cs" />
+    <Compile Include="Parser\CoolParser.cs" />
+    <Compile Include="Parser\CoolVisitor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SemanticCheck\Errors\SemanticError.cs" />
+    <Compile Include="SemanticCheck\Type.cs" />
+    <Compile Include="SemanticCheck\SemanticCheck.cs" />
+    <Compile Include="SemanticCheck\Scopes\Scope.cs" />
+    <Compile Include="SemanticCheck\SemanticCheckAlgoritms.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ASTDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <Antlr4 Include="Parser\Cool.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>Core.Parser</CustomToolNamespace>
+    </Antlr4>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
