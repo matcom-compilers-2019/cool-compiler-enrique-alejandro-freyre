@@ -4,9 +4,9 @@
 
 **Nombre** | **Grupo** | **Github**
 --|--|--
-Enrique Cobreiro Suarez     | C411 | [@github_user](https://github.com/ecobreiro94)
+Enrique Cobreiro Suarez     | C411 | [@ecobreiro94](https://github.com/ecobreiro94)
 Alejandro Dominguez Rivero  | C411 | [@github_user](https://github.com/<user>)
-Alejandro Freyre Echevaria  | C412 | [@github_user](https://github.com/<user>)
+Alejandro Freyre Echevaria  | C412 | [@newNeighbour](https://github.com/newNeighbour)
 
 ## Compilar
 
